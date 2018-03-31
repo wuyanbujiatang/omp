@@ -59,7 +59,8 @@ def omp2(y,phi,psi,K):
 #        print(aug_A)
         v = y - aug_A*weight
         pos_array[i] = pos
-        if np.linalg.norm(v)<1e-6:
+        print(pos_array)
+        if np.linalg.norm(v)<1e-11:
             break
     s[pos_array.tolist()] = weight
     return psi.H*s
